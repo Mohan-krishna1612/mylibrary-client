@@ -1,0 +1,44 @@
+.reports-container {
+    width: 100%;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.reports-container .row {
+    justify-content: space-around;
+}
+
+.report {
+    margin-bottom: 1rem;
+}
+
+.title {
+    color: red;
+}
+
+.descitption {
+    justify-content: space-around;
+    display: flex;
+}
+
+.descitption .descr {
+    font-weight: 600;
+    color: rgb(39, 52, 56);
+}
+
+.descitption .descr-content {
+    color: green;
+}
+
+.descr-desc {
+    font-weight: 600;
+    color: rgb(39, 52, 56);
+}
+
+.descr-content {
+    font-weight: 400;
+}

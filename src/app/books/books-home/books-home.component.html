@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="header" *ngIf="role === 'Admin'">
+            <mat-card>
+                <button mat-raised-button color="primary" class="col-lg-6 col-md-6 col-sm-12" routerLink="/create-book">Create Book</button>
+            </mat-card>
+        </div>
+        <div class="home-content">
+            <div class="row">
+                <div *ngFor="let book of booksDetails" class="col-lg-4  col-sm-6 mb-1">
+                    <mat-card>
+                        <div class="content">
+                            <div class="cover">
+                                <div class="profile"></div>
+                            </div>
+                            <div class="title">
+                                <div class="title-info">
+                                    <div class="title-info-header">
+                                        <div class="position-relative">
+
+                                            <h2>{{book.bookName}}<span *ngIf="book.borrower" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">Borrowed</span></h2>
+                                        </div>
+                                        <div class="report" *ngIf="role != 'Admin'">
+                                            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                            <mat-icon>more_vert</mat-icon>
+                                          </button>
+                                            <mat-menu #menu="matMenu">
+                                                <button mat-menu-item (click)="submitReport(book.bookName)">
+                                              <mat-icon>report</mat-icon>
+                                              <span>Report</span>
+                                            </button>
+
+                                            </mat-menu>
+                                        </div>
+                                    </div>
+                                    <h5>Description:
+                                        <p>{{book.description}}</p>
+                                    </h5>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div style="display:flex; justify-content:space-around" *ngIf="book.borrower">
+                            <div class="borrower">
+                                <h5>Barrower : <span>{{book.borrower}}</span></h5>
+                            </div>
+                            <div class="borrower">
+                                <h5>Barrowed Date : <span>{{book.borrowDate | date}}</span></h5>
+                            </div>
+                        </div>
+                        <div style="display:flex; justify-content:space-around" *ngIf="!book.borrower">
+                            <div class="borrower">
+                                <h5>Status : <span style="color: green;">Available</span></h5>
+                            </div>
+
+                        </div>
+                        <div class="actions ">
+                            <button mat-raised-button class="col-12 buy" (click)="buy(book._id)" *ngIf="role != 'Admin' ">Buy </button>
+
+                            <!-- <button mat-raised-button color="warn" class="col-lg-12 " (click)="return(book._id)" *ngIf="role != 'Admin' ">Return </button> -->
+
+                            <div style="display: flex; justify-content:space-between" *ngIf="role === 'Admin' ">
+                                <button mat-raised-button color="primary" class="col-6 " (click)="editBook(book._id)">Edit </button>
+                                <button mat-raised-button color="warn" class="col-6 " (click)="deleteBook(book._id)">Delete </button>
+                            </div>
+
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

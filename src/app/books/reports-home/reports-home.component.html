@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="reports-container">
+            <div class="page-title">
+                <h2>Reports</h2>
+            </div>
+            <div class="row">
+                <div class="report col-lg-9 col-md-9 col-sm-12" *ngFor="let report of reportsData">
+                    <mat-card>
+                        <div class="title">
+                            <h3>{{report.title}}</h3>
+                        </div>
+                        <div class="descitption">
+                            <div class="descr">Book name : <span class="descr-content">{{report.bookName}}</span>
+                            </div>
+                            <div class="descr">Reported User : <span class="descr-content">{{report.reportedUserName}}</span>
+                            </div>
+                        </div>
+
+                        <div class="descr-desc">Description : <span class="descr-content">{{report.description}}</span>
+                        </div>
+
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="row">
+        <div class="dashb">
+            <div class="title">
+                <h1>Welcome to Dashboard</h1>
+            </div>
+            <div class="dashb-first-row">
+                <div class="row">
+                    <mat-card class="dashb-crd col-lg-4 col-md-6 col-sm-12">
+                        <mat-card-header>
+                            <div class="card-content card-first-r-content">
+                                <div class="text">
+                                    <h2>{{dashboardContent.usersCount}}</h2>
+                                    <p>Users</p>
+                                </div>
+                                <div class="icn">
+                                    <mat-icon>group</mat-icon>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-actions>
+                            <button class="col-12" mat-raised-button routerLink="/users-home">View Info</button>
+
+                        </mat-card-actions>
+                    </mat-card>
+                    <mat-card class="dashb-crd dashb-crd1 col-lg-4 col-md-6 col-sm-12">
+                        <mat-card-header>
+                            <div class="card-content card-first-r-content">
+                                <div class="text">
+                                    <h2>{{dashboardContent.bookCount}}</h2>
+                                    <p>Books</p>
+                                </div>
+                                <div class="icn">
+                                    <mat-icon>library_books</mat-icon>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-actions>
+                            <button class="col-12" mat-raised-button routerLink="/books-home">View Info</button>
+
+                        </mat-card-actions>
+                    </mat-card>
+
+
+
+                </div>
+
+                <div class="dashb-second-row">
+                    <div class="row">
+                        <div class=" board-icn col-lg-4 col-md-6 col-sm-12">
+                            <mat-card class="dashb-card-sr ">
+                                <div class="card-contents card-content-sr-content item1">
+                                    <div class="icn">
+                                        <mat-icon>group</mat-icon>
+                                    </div>
+                                    <div class="text ">
+                                        <p>borrowed</p>
+                                        <h2>{{dashboardContent.bookCount - dashboardContent.available[0].Available}}</h2>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                        <div class="board-icn col-lg-4 col-md-6 col-sm-12">
+                            <mat-card class="dashb-card-sr ">
+                                <div class="card-contents card-content-sr-content item2 ">
+                                    <div class="icn">
+                                        <mat-icon>first_page</mat-icon>
+                                    </div>
+                                    <div class="text ">
+                                        <p>Returned</p>
+                                        <h2>{{dashboardContent.available[0].Available}}</h2>
+                                    </div>
+                                </div>
+
+                            </mat-card>
+                        </div>
+                        <div class="board-icn col-lg-4 col-md-6 col-sm-12">
+
+                            <mat-card class="dashb-card-sr  ">
+                                <div class="card-contents card-content-sr-content item3 ">
+                                    <div class="icn">
+                                        <mat-icon>group</mat-icon>
+                                    </div>
+                                    <div class="text ">
+                                        <p>Not Returned</p>
+                                        <h2>{{dashboardContent.bookCount - dashboardContent.available[0].Available}}</h2>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

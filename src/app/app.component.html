@@ -1,0 +1,36 @@
+<app-header [SideNav]="sidenav"></app-header>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+        <div class="user-container">
+            <div class="user-profile">
+                <div class="image"></div>
+            </div>
+            <div class="user-title">
+                <h2>{{username}} </h2>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+
+        <mat-nav-list>
+            <a mat-list-item routerLink="dashboard" [routerLinkActive]="['is-active']" *ngIf="role === 'Admin'">
+                <mat-icon>dashboard</mat-icon> Dashboard</a>
+            <a mat-list-item routerLink="users-home" [routerLinkActive]="['is-active']" *ngIf="role === 'Admin'">
+                <mat-icon>group</mat-icon> Users</a>
+            <a mat-list-item routerLink="books-home" [routerLinkActive]="['is-active']">
+                <mat-icon>library_books</mat-icon> Books
+            </a>
+            <a mat-list-item routerLink="dashboard1" [routerLinkActive]="['is-active']" routerLink="my-books" *ngIf="role != 'Admin'">
+                <mat-icon>currency_rupee</mat-icon> Borrowed</a>
+            <a mat-list-item routerLink="dashboard1" [routerLinkActive]="['is-active']" routerLink="reports-home" *ngIf="role === 'Admin'">
+                <mat-icon>report</mat-icon> Reports</a>
+            <a mat-list-item routerLink="reports-home" (click)="logout()" *ngIf="loggedIn">
+                <mat-icon>logout</mat-icon> Logout</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height:88vh;width:auto;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>

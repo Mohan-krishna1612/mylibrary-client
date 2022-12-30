@@ -1,0 +1,171 @@
+.title {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.title h1 {
+    color: green;
+    font-weight: 900;
+    font: bold;
+}
+
+.dashb {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.dashb-first-row {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.dashb-first-row .row {
+    justify-content: space-around;
+}
+
+.card-content {
+    display: inline-flex;
+    width: 100%;
+}
+
+.dashb-crd {
+    background: linear-gradient(to right, #3fb0ac, #a7d8e9);
+    margin: 5px;
+}
+
+@media (max-width:600px) {
+    .dashb-crd {
+        margin: 5px;
+    }
+}
+
+.dashb-crd1 {
+    background: linear-gradient(to right, rgb(237, 90, 117), rgb(236, 175, 68));
+}
+
+.card {
+    height: auto;
+    cursor: pointer;
+    margin: 0;
+}
+
+.card-link {
+    text-align: center;
+}
+
+.card:hover {
+    background-color: rgb(11, 202, 255);
+}
+
+.card1 {
+    background-color: rgb(89, 218, 253);
+}
+
+.card-first-r-content .text {
+    width: 70%;
+    text-align: left;
+    padding: 1rem 0 0 1rem;
+}
+
+.card-first-r-content .text h2 {
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+.card-first-r-content .text p {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card-first-r-content .icn {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card-first-r-content mat-icon {
+    color: #273438;
+    font-size: 60px;
+    height: 60px;
+    width: 60px;
+}
+
+.card-contents {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.card-content-sr-content {
+    width: 100%;
+    display: flex;
+}
+
+.dashboard {
+    height: 100%;
+}
+
+.card-content-sr-content .icn {
+    width: 35%;
+    background-color: rgb(22, 177, 235);
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card-content-sr-content .icn .mat-icon {
+    font-size: 40px;
+    height: 40px;
+    width: auto;
+    margin-left: 20%;
+}
+
+.card-content-sr-content .text {
+    width: 65%;
+    padding-left: 4px;
+}
+
+.dashb-second-row {
+    justify-content: space-around;
+    padding-top: 2rem;
+}
+
+::ng-deep {
+    .mat-card-header-text {
+        margin: 0!important;
+    }
+}
+
+.dashb-card-sr {
+    padding: 0;
+}
+
+.card-content-sr-content .text p {
+    font-size: 1rem;
+}
+
+.card-content-sr-content .text h2 {
+    font-size: 2rem;
+}
+
+.dashb-card-sr .item2 .icn {
+    background: rgb(210, 52, 43);
+}
+
+.dashb-card-sr .item3 .icn {
+    background: rgb(21, 152, 70);
+}
+
+mat-icon {
+    color: #ffffff;
+}
+
+.board-icn {
+    margin-bottom: 4px;
+}

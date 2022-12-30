@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="report-container">
+            <div class="row">
+                <div class="report_form col-lg-9 col-md-9 col-sm-12">
+                    <div class="title">
+                        <h2>Report</h2>
+                    </div>
+                    <div class="report_form">
+                        <form [formGroup]='reportForm' (ngSubmit)="submitReport()">
+                            <div class="">
+
+                                <mat-form-field class="example-full-width col-lg-6 col-md-6 col-sm-12" appearance="fill">
+                                    <mat-label>Title</mat-label>
+                                    <input matInput required formControlName="title">
+
+                                    <mat-error *ngIf="!reportForm.hasError('required')">
+                                        Title Name is <strong>required</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div>
+                                <mat-form-field class="example-full-width col-lg-6 col-md-6 col-sm-12" appearance="fill">
+                                    <mat-label>Description</mat-label>
+                                    <textarea matInput formControlName="description" placeholder="Ex. email@example.com"></textarea>
+                                    <mat-error *ngIf=" !reportForm.hasError('required')">
+                                        Please add <strong>valid Description</strong>
+                                    </mat-error>
+
+                                </mat-form-field>
+                            </div>
+                            <div class="">
+                                <button type="submit" class="btn btn-primary col-lg-6 col-md-6 col-sm12">Submit Report</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>

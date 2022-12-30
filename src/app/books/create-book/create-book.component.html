@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="title">
+            <h2>Create Book</h2>
+        </div>
+        <div class="user-form">
+            <div class="create-form">
+                <form [formGroup]='bookForm' (ngSubmit)="createBook()">
+                    <div>
+                        <mat-form-field class="example-full-width col-lg-6 col-md-6 col-sm-12" appearance="fill">
+                            <mat-label>Book Name</mat-label>
+                            <input matInput required formControlName="bookName">
+
+                            <mat-error *ngIf="!bookForm.hasError('required')">
+                                Book Name is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="example-full-width col-lg-6 col-md-6 col-sm-12" appearance="fill">
+                            <mat-label>Book Description</mat-label>
+                            <textarea matInput required formControlName="description"></textarea>
+
+                            <mat-error *ngIf="!bookForm.hasError('required')">
+                                Book description is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary col-lg-6 col-md-6 col-sm-12">Create Book</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>

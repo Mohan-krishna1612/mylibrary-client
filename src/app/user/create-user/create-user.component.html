@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="title">
+            <h2>Create User</h2>
+        </div>
+        <div class="user-form">
+            <div class="create-form ">
+                <form [formGroup]='profileForm' (ngSubmit)="Signup()">
+                    <div class="">
+                        <mat-form-field class="example-full-width col-lg-6 col-md-6 col-sm-12" appearance="fill">
+                            <mat-label>Username</mat-label>
+                            <input matInput required formControlName="fullName">
+
+                            <mat-error *ngIf="!profileForm.hasError('required') || profileForm.hasError('pattern')">
+                                User Name is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="">
+                        <mat-form-field class="example-full-width col-lg-6 col-md-6 col-sm-12" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput formControlName="email" placeholder="Ex. email@example.com">
+                            <mat-error *ngIf="!profileForm.hasError('email') && !profileForm.hasError('required')">
+                                Please enter a <strong>valid email address</strong>
+                            </mat-error>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="">
+                        <mat-form-field appearance="fill" class="col-lg-6 col-md-6 col-sm-12">
+                            <mat-label>Enter your password</mat-label>
+                            <input matInput #password [type]="hide ? 'password' : 'text'" required placeholder="Password" formControlName="password">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                            <mat-hint align="end" aria-live="polite">
+                                {{password.value.length}} / 8
+                            </mat-hint>
+
+                            <mat-error *ngIf="!profileForm.hasError('password')">
+                                Please enter a <strong>valid password</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="btn btn-primary col-lg-6 col-md-6 col-sm-12">Create User</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
